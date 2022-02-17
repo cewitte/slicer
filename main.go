@@ -8,7 +8,8 @@ import (
 	"math/rand"
 )
 
-func slicer(chunkSize int, slice []interface{}) ([]interface{}, error) {
+// Slicer splits a slicer into smaller chunks.
+func Slicer(chunkSize int, slice []interface{}) ([]interface{}, error) {
 	if len(slice) == 0 || chunkSize > len(slice) {
 		return nil, errors.New("nothing to be done here, check your chunk and content sizes")
 	}
@@ -55,5 +56,4 @@ func main() {
 	}
 
 	fmt.Println("Final result returned:", slices)
-
 }
